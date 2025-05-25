@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+/* Variables CSS inspiradas en textiles bolivianos */
+:root {
+  /* Colores inspirados en textiles bolivianos */
+  --rojo-tradicional: #b91c1c;
+  --azul-andino: #1e40af;
+  --dorado: #f59e0b;
+  --verde-oscuro: #065f46;
+  --terracota: #ea580c;
+  --crema: #fef3c7;
+  --blanco-textil: #fefefe;
+  --gris-oscuro: #1f2937;
+  --gris-medio: #6b7280;
+  --gris-claro: #f3f4f6;
+
+  /* Tipografía */
+  --fuente-titulo: 'Merriweather', serif;
+  --fuente-texto: 'Open Sans', sans-serif;
+
+  /* Espaciados */
+  --espaciado-xs: 0.5rem;
+  --espaciado-sm: 1rem;
+  --espaciado-md: 1.5rem;
+  --espaciado-lg: 2rem;
+  --espaciado-xl: 3rem;
+
+  /* Sombras */
+  --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --sombra-media: 0 8px 25px rgba(0, 0, 0, 0.1);
+  --sombra-fuerte: 0 15px 35px rgba(0, 0, 0, 0.15);
+
+  /* Transiciones */
+  --transicion-rapida: 0.2s ease;
+  --transicion-media: 0.3s ease;
+  --transicion-lenta: 0.5s ease;
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos base del body */
+body {
+  font-family: var(--fuente-texto);
+  line-height: 1.6;
+  color: var(--gris-oscuro);
+  background-color: var(--blanco-textil);
+}
+
+/* App container */
+#app {
+  width: 100%;
+  min-height: 100vh;
+  display: block !important;
+}
+
+/* Tipografía global */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fuente-titulo);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--gris-oscuro);
+}
+
+p {
+  margin-bottom: var(--espaciado-sm);
+  color: var(--gris-medio);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transicion-media);
+}

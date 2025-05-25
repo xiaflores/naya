@@ -1,0 +1,102 @@
+/* Header */
+.main-header {
+  width: 100%;
+  background: linear-gradient(135deg, var(--rojo-tradicional) 0%, var(--terracota) 100%);
+  color: white;
+  padding: var(--espaciado-sm) 0;
+  box-shadow: var(--sombra-media);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.main-header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espaciado-sm);
+}
+
+.logo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transicion-media);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--espaciado-md);
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: var(--espaciado-xs) var(--espaciado-sm);
+  border-radius: 6px;
+  transition: all var(--transicion-media);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Main content */
+main {
+  width: 100%;
+  min-height: calc(100vh - 140px);
+  display: block !important;
+  background-color: var(--blanco-textil);
+}
+
+/* Footer */
+.main-footer {
+  width: 100%;
+  background: linear-gradient(135deg, var(--gris-oscuro) 0%, var(--verde-oscuro) 100%);
+  color: white;
+  text-align: center;
+  padding: var(--espaciado-lg);
+  margin-top: var(--espaciado-xl);
+}
+
+.main-footer p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Responsive para layout */
+@media (max-width: 768px) {
+  .main-header nav {
+    flex-direction: column;
+    gap: var(--espaciado-sm);
+    padding: var(--espaciado-sm);
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    gap: var(--espaciado-sm);
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    padding: var(--espaciado-xs);
+  }
+}

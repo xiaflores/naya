@@ -1,0 +1,102 @@
+/* Contenedores */
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espaciado-sm);
+}
+
+.contenedor-completo {
+  width: 100%;
+  padding: 0 var(--espaciado-sm);
+}
+
+/* Títulos de sección */
+.titulo-seccion {
+  font-family: var(--fuente-titulo);
+  font-size: 2.5rem;
+  color: var(--rojo-tradicional);
+  text-align: center;
+  margin-bottom: var(--espaciado-lg);
+  position: relative;
+}
+
+.titulo-seccion::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--dorado), var(--terracota));
+  margin: var(--espaciado-sm) auto 0;
+  border-radius: 2px;
+}
+
+/* Sombras */
+.sombra-suave {
+  box-shadow: var(--sombra-suave);
+}
+
+.sombra-media {
+  box-shadow: var(--sombra-media);
+}
+
+.sombra-fuerte {
+  box-shadow: var(--sombra-fuerte);
+}
+
+/* Efectos hover */
+.hover-elevar {
+  transition: transform var(--transicion-media);
+}
+
+.hover-elevar:hover {
+  transform: translateY(-5px);
+}
+
+.hover-escalar {
+  transition: transform var(--transicion-media);
+}
+
+.hover-escalar:hover {
+  transform: scale(1.05);
+}
+
+/* Espaciados */
+.espaciado-superior-lg {
+  padding-top: var(--espaciado-lg);
+}
+
+.espaciado-inferior-lg {
+  padding-bottom: var(--espaciado-lg);
+}
+
+.margen-superior-lg {
+  margin-top: var(--espaciado-lg);
+}
+
+.margen-inferior-lg {
+  margin-bottom: var(--espaciado-lg);
+}
+
+/* Texto */
+.texto-centrado {
+  text-align: center;
+}
+
+.texto-boliviano {
+  color: var(--rojo-tradicional);
+}
+
+.texto-dorado {
+  color: var(--dorado);
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .titulo-seccion {
+    font-size: 2rem;
+  }
+
+  .contenedor {
+    padding: 0 var(--espaciado-xs);
+  }
+}

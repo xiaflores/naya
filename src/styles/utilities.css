@@ -1,6 +1,6 @@
-/* Contenedores */
+/* =============== CONTENEDORES =============== */
 .contenedor {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 0 var(--espaciado-sm);
 }
@@ -10,7 +10,7 @@
   padding: 0 var(--espaciado-sm);
 }
 
-/* Títulos de sección */
+/* =============== TÍTULOS DE SECCIÓN =============== */
 .titulo-seccion {
   font-family: var(--fuente-titulo);
   font-size: 2.5rem;
@@ -30,7 +30,7 @@
   border-radius: 2px;
 }
 
-/* Sombras */
+/* =============== SOMBRAS =============== */
 .sombra-suave {
   box-shadow: var(--sombra-suave);
 }
@@ -43,7 +43,7 @@
   box-shadow: var(--sombra-fuerte);
 }
 
-/* Efectos hover */
+/* =============== EFECTOS HOVER =============== */
 .hover-elevar {
   transition: transform var(--transicion-media);
 }
@@ -60,26 +60,115 @@
   transform: scale(1.05);
 }
 
-/* Espaciados */
+.hover-dorado {
+  transition: color var(--transicion-media);
+}
+
+.hover-dorado:hover {
+  color: var(--dorado);
+}
+
+.hover-rojo {
+  transition: color var(--transicion-media);
+}
+
+.hover-rojo:hover {
+  color: var(--rojo-tradicional);
+}
+
+/* =============== ESPACIADOS =============== */
+.espaciado-superior-xs {
+  padding-top: var(--espaciado-xs);
+}
+
+.espaciado-superior-sm {
+  padding-top: var(--espaciado-sm);
+}
+
+.espaciado-superior-md {
+  padding-top: var(--espaciado-md);
+}
+
 .espaciado-superior-lg {
   padding-top: var(--espaciado-lg);
+}
+
+.espaciado-superior-xl {
+  padding-top: var(--espaciado-xl);
+}
+
+.espaciado-inferior-xs {
+  padding-bottom: var(--espaciado-xs);
+}
+
+.espaciado-inferior-sm {
+  padding-bottom: var(--espaciado-sm);
+}
+
+.espaciado-inferior-md {
+  padding-bottom: var(--espaciado-md);
 }
 
 .espaciado-inferior-lg {
   padding-bottom: var(--espaciado-lg);
 }
 
+.espaciado-inferior-xl {
+  padding-bottom: var(--espaciado-xl);
+}
+
+/* Márgenes */
+.margen-superior-xs {
+  margin-top: var(--espaciado-xs);
+}
+
+.margen-superior-sm {
+  margin-top: var(--espaciado-sm);
+}
+
+.margen-superior-md {
+  margin-top: var(--espaciado-md);
+}
+
 .margen-superior-lg {
   margin-top: var(--espaciado-lg);
+}
+
+.margen-superior-xl {
+  margin-top: var(--espaciado-xl);
+}
+
+.margen-inferior-xs {
+  margin-bottom: var(--espaciado-xs);
+}
+
+.margen-inferior-sm {
+  margin-bottom: var(--espaciado-sm);
+}
+
+.margen-inferior-md {
+  margin-bottom: var(--espaciado-md);
 }
 
 .margen-inferior-lg {
   margin-bottom: var(--espaciado-lg);
 }
 
-/* Texto */
+.margen-inferior-xl {
+  margin-bottom: var(--espaciado-xl);
+}
+
+/* =============== TEXTO =============== */
 .texto-centrado {
   text-align: center;
+}
+
+.texto-izquierda {
+  text-align: left;
+}
+
+.texto-derecha {
+  text-align: right;
 }
 
 .texto-boliviano {
@@ -90,8 +179,461 @@
   color: var(--dorado);
 }
 
-/* Responsive utilities */
+.texto-verde {
+  color: var(--verde-oscuro);
+}
+
+.texto-azul {
+  color: var(--azul-andino);
+}
+
+.texto-terracota {
+  color: var(--terracota);
+}
+
+.texto-crema {
+  color: var(--crema);
+}
+
+.texto-gris {
+  color: var(--gris-medio);
+}
+
+.texto-blanco {
+  color: var(--blanco-textil);
+}
+
+/* Tamaños de texto */
+.texto-pequeno {
+  font-size: 0.875rem;
+}
+
+.texto-normal {
+  font-size: 1rem;
+}
+
+.texto-grande {
+  font-size: 1.125rem;
+}
+
+.texto-xl {
+  font-size: 1.25rem;
+}
+
+.texto-2xl {
+  font-size: 1.5rem;
+}
+
+/* Peso de fuente */
+.texto-ligero {
+  font-weight: 300;
+}
+
+.texto-normal-peso {
+  font-weight: 400;
+}
+
+.texto-medio {
+  font-weight: 500;
+}
+
+.texto-semi-negrita {
+  font-weight: 600;
+}
+
+.texto-negrita {
+  font-weight: 700;
+}
+
+/* =============== FONDOS =============== */
+.fondo-rojo {
+  background-color: var(--rojo-tradicional);
+}
+
+.fondo-dorado {
+  background-color: var(--dorado);
+}
+
+.fondo-verde {
+  background-color: var(--verde-oscuro);
+}
+
+.fondo-crema {
+  background-color: var(--crema);
+}
+
+.fondo-blanco {
+  background-color: var(--blanco-textil);
+}
+
+.fondo-gris-claro {
+  background-color: var(--gris-claro);
+}
+
+/* Gradientes bolivianos */
+.fondo-gradiente-rojo {
+  background: linear-gradient(135deg, var(--rojo-tradicional) 0%, var(--terracota) 100%);
+}
+
+.fondo-gradiente-verde {
+  background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--azul-andino) 100%);
+}
+
+.fondo-gradiente-dorado {
+  background: linear-gradient(135deg, var(--dorado) 0%, var(--crema) 100%);
+}
+
+/* =============== BORDES =============== */
+.borde-rojo {
+  border: 2px solid var(--rojo-tradicional);
+}
+
+.borde-dorado {
+  border: 2px solid var(--dorado);
+}
+
+.borde-verde {
+  border: 2px solid var(--verde-oscuro);
+}
+
+.borde-crema {
+  border: 2px solid var(--crema);
+}
+
+.borde-gris {
+  border: 2px solid var(--gris-claro);
+}
+
+/* Bordes redondeados */
+.borde-redondeado-sm {
+  border-radius: 4px;
+}
+
+.borde-redondeado {
+  border-radius: 8px;
+}
+
+.borde-redondeado-lg {
+  border-radius: 12px;
+}
+
+.borde-redondeado-xl {
+  border-radius: 16px;
+}
+
+.borde-circular {
+  border-radius: 50%;
+}
+
+/* =============== FLEXBOX UTILITIES =============== */
+.flex {
+  display: flex;
+}
+
+.flex-columna {
+  flex-direction: column;
+}
+
+.flex-centrado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-entre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-alrededor {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-inicio {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-final {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-gap-sm {
+  gap: var(--espaciado-sm);
+}
+
+.flex-gap-md {
+  gap: var(--espaciado-md);
+}
+
+.flex-gap-lg {
+  gap: var(--espaciado-lg);
+}
+
+/* =============== GRID UTILITIES =============== */
+.grid {
+  display: grid;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espaciado-md);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaciado-md);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--espaciado-md);
+}
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--espaciado-md);
+}
+
+.grid-gap-sm {
+  gap: var(--espaciado-sm);
+}
+
+.grid-gap-lg {
+  gap: var(--espaciado-lg);
+}
+
+/* =============== BOTONES BOLIVIANOS =============== */
+.btn-boliviano {
+  padding: var(--espaciado-sm) var(--espaciado-md);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--fuente-texto);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: var(--transicion-media);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaciado-xs);
+}
+
+.btn-rojo {
+  background: linear-gradient(135deg, var(--rojo-tradicional) 0%, var(--terracota) 100%);
+  color: var(--blanco-textil);
+  box-shadow: var(--sombra-suave);
+}
+
+.btn-rojo:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-media);
+}
+
+.btn-dorado {
+  background: linear-gradient(135deg, var(--dorado) 0%, #fbbf24 100%);
+  color: var(--gris-oscuro);
+  box-shadow: var(--sombra-suave);
+}
+
+.btn-dorado:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-media);
+}
+
+.btn-verde {
+  background: linear-gradient(135deg, var(--verde-oscuro) 0%, #059669 100%);
+  color: var(--blanco-textil);
+  box-shadow: var(--sombra-suave);
+}
+
+.btn-verde:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-media);
+}
+
+.btn-outline-rojo {
+  background: transparent;
+  color: var(--rojo-tradicional);
+  border: 2px solid var(--rojo-tradicional);
+}
+
+.btn-outline-rojo:hover {
+  background-color: var(--rojo-tradicional);
+  color: var(--blanco-textil);
+}
+
+/* =============== CARDS BOLIVIANAS =============== */
+.card-boliviana {
+  background-color: var(--blanco-textil);
+  border-radius: 12px;
+  box-shadow: var(--sombra-suave);
+  padding: var(--espaciado-lg);
+  transition: var(--transicion-media);
+  border: 1px solid var(--gris-claro);
+}
+
+.card-boliviana:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-media);
+}
+
+.card-destacada {
+  border: 2px solid var(--dorado);
+  position: relative;
+}
+
+.card-destacada::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--dorado), var(--terracota), var(--rojo-tradicional));
+  border-radius: 12px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+/* =============== CONTENEDORES DE PÁGINA =============== */
+.pagina-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--espaciado-lg) var(--espaciado-sm);
+  min-height: calc(100vh - var(--header-height));
+}
+
+.seccion-completa {
+  width: 100%;
+  padding: var(--espaciado-xl) 0;
+}
+
+.seccion-centrada {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--espaciado-lg) var(--espaciado-sm);
+}
+
+/* =============== HERO SECTIONS =============== */
+.hero-boliviano {
+  background: linear-gradient(135deg, var(--rojo-tradicional) 0%, var(--terracota) 100%);
+  color: var(--blanco-textil);
+  padding: var(--espaciado-xl) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-boliviano::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+    repeat;
+  opacity: 0.1;
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-titulo {
+  font-size: 3rem;
+  font-family: var(--fuente-titulo);
+  margin-bottom: var(--espaciado-md);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitulo {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  margin-bottom: var(--espaciado-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =============== ANIMACIONES BOLIVIANAS =============== */
+.animacion-aparecer {
+  animation: aparecer 0.6s ease-out;
+}
+
+.animacion-deslizar-arriba {
+  animation: deslizarArriba 0.8s ease-out;
+}
+
+.animacion-rotar {
+  animation: rotar 2s linear infinite;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes deslizarArriba {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =============== RESPONSIVE UTILITIES =============== */
+.oculto-movil {
+  display: block;
+}
+
+.solo-movil {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .oculto-movil {
+    display: none;
+  }
+
+  .solo-movil {
+    display: block;
+  }
+
   .titulo-seccion {
     font-size: 2rem;
   }
@@ -99,4 +641,51 @@
   .contenedor {
     padding: 0 var(--espaciado-xs);
   }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .flex-columna-movil {
+    flex-direction: column;
+  }
+
+  .texto-centrado-movil {
+    text-align: center;
+  }
+}
+
+/* =============== UTILIDADES DE ESTADO =============== */
+.cargando {
+  opacity: 0.6;
+  pointer-events: none;
+  position: relative;
+}
+
+.cargando::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border: 2px solid var(--gris-claro);
+  border-top: 2px solid var(--dorado);
+  border-radius: 50%;
+  animation: rotar 1s linear infinite;
+}
+
+.deshabilitado {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.activo {
+  color: var(--dorado);
+  font-weight: 600;
 }

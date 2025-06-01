@@ -62,6 +62,17 @@ const router = createRouter({
       ],
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    // Siempre scroll al top en navegación nueva
+    return { top: 0 }
+
+    // O si quieres mantener posición en botón "atrás":
+    // if (savedPosition) {
+    //   return savedPosition
+    // } else {
+    //   return { top: 0 }
+    // }
+  },
 })
 
 // Guard para rutas protegidas (mantener igual)

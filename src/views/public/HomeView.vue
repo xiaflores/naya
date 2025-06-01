@@ -1,14 +1,13 @@
 <template>
-  <div class="landing">
+  <div class="landing" ref="header">
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <h1 class="hero-title">Tejidos de Bolivia</h1>
+        <h1 class="hero-title">Bordados Flores</h1>
         <p class="hero-subtitle">Ropas Tradicionales Auténticas</p>
         <p class="hero-description">
           Descubre la riqueza cultural de Bolivia a través de nuestros textiles tradicionales,
-          elaborados a mano por artesanos locales con técnicas ancestrales transmitidas de
-          generación en generación.
+          elaborados a mano por artesanos locales.
         </p>
         <div class="hero-buttons">
           <router-link to="/productos" class="btn-primary">Ver Productos</router-link>
@@ -27,13 +26,15 @@
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon">🏺</div>
-            <h3>Tradición Ancestral</h3>
+            <h3>Tradición Cultural</h3>
             <p>
               Técnicas de tejido transmitidas por generaciones, preservando la cultura boliviana.
             </p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">✋</div>
+            <div class="feature-icon">
+              <img :src="gifHechoAMano" alt="Animación GIF" />
+            </div>
             <h3>Hecho a Mano</h3>
             <p>Cada pieza es única, elaborada cuidadosamente por artesanos expertos.</p>
           </div>
@@ -98,6 +99,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { getCategories } from '@/services/categories'
+import gifHechoAMano from '@/assets/icons/hecho-a-mano.gif'
 
 const categories = ref([])
 
@@ -364,6 +366,7 @@ onMounted(async () => {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  color: var(--title-color);
 }
 
 .btn-cta {
@@ -382,7 +385,20 @@ onMounted(async () => {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
 }
-
+@media screen and (max-width: 900px) {
+  .cta {
+    padding: 3rem 0 5.62rem 0;
+  }
+}
+@media screen and (max-width: 900px) {
+  .hero {
+    min-height: 400px;
+  }
+  .hero-placeholder {
+    width: 250px;
+    height: 300px;
+  }
+}
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
@@ -411,6 +427,38 @@ onMounted(async () => {
 
   .categories-showcase {
     grid-template-columns: 1fr;
+  }
+  .cta {
+    padding: 3rem 0 5.62rem 0;
+  }
+}
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: var(--espaciado-sm);
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    margin-bottom: var(--espaciado-md);
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: var(--espaciado-sm) var(--espaciado-md);
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.2rem;
   }
 }
 </style>

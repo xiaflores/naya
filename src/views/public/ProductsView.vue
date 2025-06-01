@@ -163,22 +163,23 @@ onMounted(async () => {
 .page-header {
   background: linear-gradient(135deg, var(--rojo-tradicional) 0%, var(--terracota) 100%);
   color: white;
-  padding: var(--espaciado-xl) 0;
+  padding: var(--espaciado-md) 0;
   text-align: center;
 }
 
 .page-title {
   font-family: var(--fuente-titulo);
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: var(--espaciado-sm);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .page-subtitle {
-  font-size: 1.2rem;
+  font-size: 1rem;
   opacity: 0.9;
   max-width: 600px;
   margin: 0 auto;
+  color: var(--title-color);
 }
 
 .container {
@@ -189,8 +190,7 @@ onMounted(async () => {
 
 /* Filtros */
 .filters-section {
-  padding: var(--espaciado-xl) 0 var(--espaciado-lg);
-  background: var(--crema);
+  padding: var(--espaciado-md) 0 var(--espaciado-lg);
 }
 
 .filters {
@@ -424,18 +424,23 @@ onMounted(async () => {
 /* Responsive */
 @media (max-width: 768px) {
   .page-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .products-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: var(--espaciado-md);
   }
+  .products-section {
+    padding: var(--espaciado-md) 0 5.6rem 0;
+  }
+  .filters-section {
+    padding: var(--espaciado-sm);
+  }
 
   .filters {
     justify-content: flex-start;
     overflow-x: auto;
-    padding-bottom: var(--espaciado-sm);
   }
 
   .filter-btn {
@@ -444,6 +449,24 @@ onMounted(async () => {
 }
 
 @media (max-width: 480px) {
+  .page-header {
+    padding: var(--espaciado-xs);
+  }
+  .page-title {
+    font-size: var(--h1-font-size);
+  }
+  .page-subtitle {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+  .filters-section {
+    padding: var(--espaciado-xs);
+  }
+  .filter-btn {
+    padding: var(--espaciado-xs) var(--espaciado-sm);
+    font-weight: 600;
+    font-size: 0.7rem;
+  }
   .products-grid {
     grid-template-columns: 1fr;
   }
@@ -452,6 +475,20 @@ onMounted(async () => {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--espaciado-sm);
+  }
+  .product-category {
+    font-size: var(--tiny-font-size);
+  }
+  .product-title {
+    font-size: var(--normal-font-size);
+    margin-bottom: var(--espaciado-xs);
+  }
+  .product-description {
+    font-size: 0.7rem;
+    margin-bottom: var(--espaciado-xs);
+  }
+  .product-info {
+    padding: var(--espaciado-md);
   }
 }
 </style>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # tienda-naya
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -39,3 +40,7 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+=======
+# naya
+tienda de ropa tradicional de bolivia
+>>>>>>> e41d418a54b73ea9f8cdddeaf7805bccb66686b4

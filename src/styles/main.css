@@ -1,13 +1,14 @@
+/* Fuentes de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&display=swap');
 
 /* Variables CSS inspiradas en textiles bolivianos */
 :root {
   /* Colores inspirados en textiles bolivianos */
-  --rojo-tradicional: #b91c1c;
+  --rojo-tradicional: #d60074;
   --azul-andino: #1e40af;
   --dorado: #f59e0b;
   --verde-oscuro: #065f46;
-  --terracota: #ea580c;
+  --terracota: #dd6516;
   --crema: #fef3c7;
   --blanco-textil: #fefefe;
   --gris-oscuro: #1f2937;
@@ -16,7 +17,20 @@
 
   /* Tipografía */
   --fuente-titulo: 'Merriweather', serif;
-  --fuente-texto: 'Open Sans', sans-serif;
+  --fuente-texto: 'Poppins', sans-serif;
+  --body-font: var(--fuente-texto);
+  --font-title: var(--fuente-titulo);
+
+  /* Alias para compatibilidad con sistema de navegación */
+  --title-color: var(--blanco-textil);
+  --text-color: var(--gris-medio);
+  --container-color: var(--rojo-tradicional);
+  --first-color: var(--dorado);
+
+  /* Tamaños de fuente */
+  --h1-font-size: 1.5rem;
+  --normal-font-size: 0.938rem;
+  --tiny-font-size: 0.625rem;
 
   /* Espaciados */
   --espaciado-xs: 0.5rem;
@@ -34,6 +48,18 @@
   --transicion-rapida: 0.2s ease;
   --transicion-media: 0.3s ease;
   --transicion-lenta: 0.5s ease;
+
+  /* Z-index */
+  --z-fixed: 100;
+  --header-height: 3rem;
+}
+
+/* Responsive para variables */
+@media screen and (min-width: 968px) {
+  :root {
+    --h1-font-size: 2.25rem;
+    --normal-font-size: 1rem;
+  }
 }
 
 /* Reset CSS */
@@ -43,12 +69,18 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Estilos base del body */
 body {
+  margin: var(--header-height) 0 0 0;
   font-family: var(--fuente-texto);
-  line-height: 1.6;
-  color: var(--gris-oscuro);
+  font-size: var(--normal-font-size);
   background-color: var(--blanco-textil);
+  color: var(--gris-oscuro);
+  line-height: 1.6;
 }
 
 /* App container */
@@ -80,4 +112,40 @@ a {
   text-decoration: none;
   color: inherit;
   transition: var(--transicion-media);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contenedores base */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espaciado-sm);
+}
+
+/* Main content - Sin footer */
+main {
+  margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
+  background-color: var(--blanco-textil);
+  width: 100%;
+}
+
+/* Scrollbar oculto */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive para body */
+@media screen and (min-width: 900px) {
+  body {
+    margin: 0;
+  }
 }

@@ -12,14 +12,13 @@
           <div class="contact-section">
             <h2>Contáctanos</h2>
             <p>
-              ¿Tienes preguntas sobre nuestros productos o quieres conocer más sobre las tradiciones
-              textiles bolivianas? ¡Estamos aquí para ayudarte!
+              ¿Tienes preguntas sobre nuestros productos bolivianos? ¡Estamos aquí para ayudarte!
             </p>
 
             <!-- Árbol de Enlaces estilo Linktree -->
             <div class="social-links-tree">
               <div class="link-item whatsapp">
-                <div class="link-icon">📱</div>
+                <div class="link-icon"><i class="bx bxl-whatsapp"></i></div>
                 <div class="link-content">
                   <strong>WhatsApp</strong>
                   <span>+591 75123456</span>
@@ -27,7 +26,7 @@
               </div>
 
               <div class="link-item instagram">
-                <div class="link-icon">📷</div>
+                <div class="link-icon"><i class="bx bxl-instagram"></i></div>
                 <div class="link-content">
                   <strong>Instagram</strong>
                   <span>@tejidosdebolivia</span>
@@ -35,7 +34,7 @@
               </div>
 
               <div class="link-item facebook">
-                <div class="link-icon">👥</div>
+                <div class="link-icon"><i class="bx bxl-facebook"></i></div>
                 <div class="link-content">
                   <strong>Facebook</strong>
                   <span>Tejidos de Bolivia</span>
@@ -43,7 +42,7 @@
               </div>
 
               <div class="link-item tiktok">
-                <div class="link-icon">🎵</div>
+                <div class="link-icon"><i class="bx bxl-tiktok"></i></div>
                 <div class="link-content">
                   <strong>TikTok</strong>
                   <span>@tejidosdebolivia</span>
@@ -51,7 +50,7 @@
               </div>
 
               <div class="link-item website">
-                <div class="link-icon">🌐</div>
+                <div class="link-icon"><i class="bx bx-link"></i></div>
                 <div class="link-content">
                   <strong>Sitio Web</strong>
                   <span>tejidosdebolivia.com</span>
@@ -59,7 +58,7 @@
               </div>
 
               <div class="link-item contact-info-item">
-                <div class="link-icon">📍</div>
+                <div class="link-icon"><i class="bx bx-map"></i></div>
                 <div class="link-content">
                   <strong>Ubicación</strong>
                   <span>Oruro, Bolivia</span>
@@ -223,7 +222,7 @@
   gap: var(--espaciado-md);
   padding: var(--espaciado-md);
   background: white;
-  border-radius: 12px;
+  border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -235,27 +234,39 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-.whatsapp:hover {
+.whatsapp:hover,
+.bxl-whatsapp:hover {
   border-color: #25d366;
+  color: #25d366;
 }
-.instagram:hover {
+.instagram:hover,
+bxl-instagram:hover {
   border-color: #e4405f;
+  color: #e4405f;
 }
-.facebook:hover {
+.facebook:hover,
+bxl-facebook:hover {
   border-color: #1877f2;
+  color: #1877f2;
 }
-.tiktok:hover {
+.tiktok:hover,
+bxl-tiktok {
   border-color: #000000;
+  color: #000000;
 }
-.website:hover {
+.website:hover,
+bx-link:hover {
   border-color: var(--rojo-tradicional);
+  color: var(--rojo-tradicional);
 }
-.contact-info-item:hover {
-  border-color: var(--gris-oscuro);
+.contact-info-item:hover,
+bx-map:hover {
+  border-color: #a71be8;
+  color: #a71be8;
 }
 
 .link-icon {
-  font-size: 1.5rem;
+  font-size: 3rem;
   min-width: 40px;
   text-align: center;
 }
@@ -390,11 +401,6 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .main-content {
-    grid-template-columns: 1fr;
-    gap: var(--espaciado-lg);
-  }
-
   .contact-section {
     position: static;
   }
@@ -414,6 +420,7 @@
   }
 
   .main-content {
+    grid-template-columns: 1fr;
     gap: var(--espaciado-md);
   }
 
@@ -450,11 +457,8 @@
     font-size: 1.1rem;
   }
 
-  .link-item,
-  .contact-info-item {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--espaciado-xs);
+  .link-item {
+    padding: var(--espaciado-sm);
   }
 
   .link-icon {

@@ -4,10 +4,10 @@
     <section class="hero">
       <div class="hero-content">
         <h1 class="hero-title">Bordados Flores</h1>
-        <p class="hero-subtitle">Ropas Tradicionales Auténticas</p>
+        <h1 class="hero-title">Tradicion y Cultura boliviana</h1>
         <p class="hero-description">
-          Descubre la riqueza cultural de Bolivia a través de nuestros textiles tradicionales,
-          elaborados a mano por artesanos locales.
+          Descubre bordados tradicionales hechos a mano por artesanos bolivianos; cada pieza captura
+          la esencia cultural andina y sus colores vibrantes.
         </p>
         <div class="hero-buttons">
           <router-link to="/productos" class="btn-primary">Ver Productos</router-link>
@@ -32,9 +32,7 @@
             </p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">
-              <img :src="gifHechoAMano" alt="Animación GIF" />
-            </div>
+            <div class="feature-icon">🏺</div>
             <h3>Hecho a Mano</h3>
             <p>Cada pieza es única, elaborada cuidadosamente por artesanos expertos.</p>
           </div>
@@ -56,14 +54,29 @@
     <section class="categories-preview">
       <div class="container">
         <h2 class="section-title">Nuestras Especialidades</h2>
-        <div class="categories-showcase" v-if="categories.length > 0">
+        <div class="categories-showcase" v-if="categoriesWithImages.length > 0">
           <div
-            v-for="category in categories.slice(0, 3)"
+            v-for="category in categoriesWithImages.slice(0, 3)"
             :key="category.id"
             class="category-preview"
           >
             <div class="category-image">
-              <div class="category-placeholder">{{ category.name }}</div>
+              <!-- Mostrar imagen del producto si existe -->
+              <img
+                v-if="category.representativeImage"
+                :src="category.representativeImage"
+                :alt="category.name"
+                class="category-product-image"
+              />
+              <!-- Placeholder si no hay imagen -->
+              <div v-else class="category-placeholder">{{ category.name }}</div>
+
+              <!-- Overlay con información -->
+              <div class="category-overlay">
+                <span class="category-count">
+                  {{ category.productCount }} producto{{ category.productCount !== 1 ? 's' : '' }}
+                </span>
+              </div>
             </div>
             <div class="category-info">
               <h3>{{ category.name }}</h3>
@@ -76,6 +89,16 @@
               </router-link>
             </div>
           </div>
+        </div>
+
+        <!-- Estado de carga -->
+        <div v-else-if="loading" class="loading-categories">
+          <p>Cargando categorías...</p>
+        </div>
+
+        <!-- Estado vacío -->
+        <div v-else class="empty-categories">
+          <p>No hay categorías disponibles en este momento.</p>
         </div>
       </div>
     </section>
@@ -97,17 +120,71 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { getCategories } from '@/services/categories'
-import gifHechoAMano from '@/assets/icons/hecho-a-mano.gif'
+import { getProducts } from '@/services/products'
 
+// Estados reactivos
 const categories = ref([])
+const products = ref([])
+const loading = ref(true)
 
+// Computed para categorías con imágenes
+const categoriesWithImages = computed(() => {
+  return categories.value.map((category) => {
+    // Filtrar productos de esta categoría
+    const categoryProducts = products.value.filter((product) => product.category_id === category.id)
+
+    // Encontrar una imagen representativa (preferir la que tenga imagen principal)
+    let representativeImage = null
+    if (categoryProducts.length > 0) {
+      // Buscar un producto que tenga imagen principal
+      const productWithPrimaryImage = categoryProducts.find(
+        (product) => product.images && product.images.some((img) => img.is_primary),
+      )
+
+      if (productWithPrimaryImage) {
+        const primaryImage = productWithPrimaryImage.images.find((img) => img.is_primary)
+        representativeImage = primaryImage.image_url
+      } else {
+        // Si no hay imagen principal, tomar la primera imagen disponible
+        const productWithImage = categoryProducts.find(
+          (product) => product.primaryImage || (product.images && product.images.length > 0),
+        )
+
+        if (productWithImage) {
+          representativeImage =
+            productWithImage.primaryImage ||
+            (productWithImage.images && productWithImage.images[0]?.image_url)
+        }
+      }
+    }
+
+    return {
+      ...category,
+      representativeImage,
+      productCount: categoryProducts.length,
+    }
+  })
+})
+
+// Cargar datos al montar el componente
 onMounted(async () => {
   try {
-    categories.value = await getCategories()
+    loading.value = true
+
+    // Cargar categorías y productos en paralelo
+    const [categoriesData, productsData] = await Promise.all([
+      getCategories(),
+      getProducts(), // Solo productos activos
+    ])
+
+    categories.value = categoriesData
+    products.value = productsData
   } catch (error) {
-    console.error('Error cargando categorías:', error)
+    console.error('Error cargando datos para el home:', error)
+  } finally {
+    loading.value = false
   }
 })
 </script>
@@ -162,7 +239,7 @@ onMounted(async () => {
 
 .btn-primary,
 .btn-secondary {
-  padding: var(--espaciado-md) var(--espaciado-xl);
+  padding: var(--espaciado-md) var(--espaciado-lg);
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
@@ -304,17 +381,60 @@ onMounted(async () => {
 }
 
 .category-image {
-  height: 200px;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Nueva imagen del producto */
+.category-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.category-preview:hover .category-product-image {
+  transform: scale(1.1);
+}
+
+/* Placeholder mejorado */
+.category-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--crema), var(--gris-claro));
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--crema), var(--gris-claro));
-}
-
-.category-placeholder {
   font-size: 1.2rem;
   color: var(--gris-medio);
   font-weight: 600;
+}
+
+/* Overlay con información */
+.category-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: white;
+  padding: var(--espaciado-md);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.category-preview:hover .category-overlay {
+  transform: translateY(0);
+}
+
+.category-count {
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.2);
+  padding: var(--espaciado-xs) var(--espaciado-sm);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
 }
 
 .category-info {
@@ -343,6 +463,19 @@ onMounted(async () => {
 
 .category-link:hover {
   color: var(--rojo-tradicional);
+}
+
+/* Estados de carga y vacío */
+.loading-categories,
+.empty-categories {
+  text-align: center;
+  padding: var(--espaciado-xl);
+  color: var(--gris-medio);
+}
+
+.loading-categories p,
+.empty-categories p {
+  font-size: 1.1rem;
 }
 
 /* Call to Action */
@@ -385,11 +518,13 @@ onMounted(async () => {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
 }
+
 @media screen and (max-width: 900px) {
   .cta {
     padding: 3rem 0 5.62rem 0;
   }
 }
+
 @media screen and (max-width: 900px) {
   .hero {
     min-height: 400px;
@@ -399,6 +534,7 @@ onMounted(async () => {
     height: 300px;
   }
 }
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
@@ -428,10 +564,16 @@ onMounted(async () => {
   .categories-showcase {
     grid-template-columns: 1fr;
   }
+
   .cta {
     padding: 3rem 0 5.62rem 0;
   }
+
+  .category-image {
+    height: 200px;
+  }
 }
+
 @media (max-width: 480px) {
   .hero-title {
     font-size: 2rem;

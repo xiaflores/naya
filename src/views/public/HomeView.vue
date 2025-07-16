@@ -25,24 +25,20 @@
         <h2 class="section-title">¿Por Qué Elegir Nuestros Textiles?</h2>
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon">🏺</div>
+            <!-- <div class="feature-icon">🏺</div> -->
             <h3>Tradición Cultural</h3>
             <p>
               Técnicas de tejido transmitidas por generaciones, preservando la cultura boliviana.
             </p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">🏺</div>
+            <!-- <div class="feature-icon">🏺</div> -->
             <h3>Hecho a Mano</h3>
-            <p>Cada pieza es única, elaborada cuidadosamente por artesanos expertos.</p>
+            <p>Cada pieza es única, elaborada cuidadosamente por artesanos.</p>
           </div>
+
           <div class="feature-card">
-            <div class="feature-icon">🌱</div>
-            <h3>Materiales Naturales</h3>
-            <p>Utilizamos lana de alpaca, algodón orgánico y tintes naturales de alta calidad.</p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">🤝</div>
+            <!-- <div class="feature-icon">🤝</div> -->
             <h3>Comercio Justo</h3>
             <p>Apoyamos directamente a las comunidades artesanas bolivianas.</p>
           </div>
@@ -200,7 +196,7 @@ onMounted(async () => {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: var(--espaciado-xl);
+  gap: var(--espaciado-lg);
   padding: var(--espaciado-xl) var(--espaciado-lg);
   max-width: 1200px;
   margin: 0 auto;
@@ -285,7 +281,6 @@ onMounted(async () => {
   justify-content: center;
   font-size: 1.2rem;
   color: var(--gris-medio);
-  border: 2px dashed var(--gris-medio);
 }
 
 /* Features Section */
@@ -312,9 +307,9 @@ onMounted(async () => {
 .section-title::after {
   content: '';
   display: block;
-  width: 60px;
+  width: 160px;
   height: 3px;
-  background: linear-gradient(90deg, var(--dorado), var(--terracota));
+  background: linear-gradient(90deg, var(--rojo-tradicional), var(--terracota));
   margin: var(--espaciado-sm) auto 0;
   border-radius: 2px;
 }
@@ -390,7 +385,7 @@ onMounted(async () => {
 .category-product-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.5s ease;
 }
 
@@ -529,9 +524,26 @@ onMounted(async () => {
   .hero {
     min-height: 400px;
   }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.4rem;
+    margin-bottom: var(--espaciado-sm);
+  }
+  .hero-description {
+    font-size: 0.9rem;
+    margin-bottom: var(--espaciado-md);
+  }
+
   .hero-placeholder {
     width: 250px;
     height: 300px;
+  }
+  .btn-primary,
+  .btn-secondary {
+    padding: var(--espaciado-sm) var(--espaciado-sm);
+    font-size: 0.75rem;
   }
 }
 

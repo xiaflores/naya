@@ -3,7 +3,6 @@
     <div class="container">
       <div class="about-header">
         <h1>Sobre Nosotros</h1>
-        <p class="lead">Preservando las tradiciones textiles de Bolivia para el mundo</p>
       </div>
 
       <div class="main-content">
@@ -17,49 +16,58 @@
 
             <!-- Árbol de Enlaces estilo Linktree -->
             <div class="social-links-tree">
-              <div class="link-item whatsapp">
+              <a href="https://bit.ly/43MJfg0" target="_blank" class="link-item whatsapp">
                 <div class="link-icon"><i class="bx bxl-whatsapp"></i></div>
                 <div class="link-content">
-                  <strong>WhatsApp</strong>
-                  <span>+591 75123456</span>
+                  <strong class="title-whatsapp">WhatsApp</strong>
+                  <span>+591 75706433</span>
                 </div>
-              </div>
+              </a>
 
-              <div class="link-item instagram">
+              <a href="https://bit.ly/3J3KXSr" target="_blank" class="link-item instagram">
                 <div class="link-icon"><i class="bx bxl-instagram"></i></div>
                 <div class="link-content">
                   <strong>Instagram</strong>
-                  <span>@tejidosdebolivia</span>
+                  <span>@bordadosflores</span>
                 </div>
-              </div>
+              </a>
 
-              <div class="link-item facebook">
+              <a href="https://bit.ly/3Nkeh9v" target="_blank" class="link-item facebook">
                 <div class="link-icon"><i class="bx bxl-facebook"></i></div>
                 <div class="link-content">
                   <strong>Facebook</strong>
-                  <span>Tejidos de Bolivia</span>
+                  <span>Bordados Flores</span>
                 </div>
-              </div>
+              </a>
 
-              <div class="link-item tiktok">
+              <a href="https://bit.ly/3NilirC" target="_blank" class="link-item tiktok">
                 <div class="link-icon"><i class="bx bxl-tiktok"></i></div>
                 <div class="link-content">
                   <strong>TikTok</strong>
-                  <span>@tejidosdebolivia</span>
+                  <span>@bordadosflores</span>
                 </div>
-              </div>
+              </a>
 
-              <div class="link-item website">
+              <a href="https://bit.ly/4lubk4Q" target="_blank" class="link-item website">
                 <div class="link-icon"><i class="bx bx-link"></i></div>
                 <div class="link-content">
                   <strong>Sitio Web</strong>
-                  <span>tejidosdebolivia.com</span>
+                  <span>bordados-flores.vercel.app</span>
                 </div>
-              </div>
+              </a>
 
               <div class="link-item contact-info-item">
                 <div class="link-icon"><i class="bx bx-map"></i></div>
                 <div class="link-content">
+                  <!-- <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d474.3925881710164!2d-67.10513110629896!3d-17.972189566837876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93e2b0b76546d1dd%3A0xd725bbd2937c50b5!2sMercado%20Simon%20Bol%C3%ADvar!5e0!3m2!1ses!2sbo!4v1674012504276!5m2!1ses!2sbo"
+                    width="200"
+                    height="250"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe> -->
                   <strong>Ubicación</strong>
                   <span>Oruro, Bolivia</span>
                 </div>
@@ -74,10 +82,8 @@
             <div class="about-section">
               <h2>Nuestra Historia</h2>
               <p>
-                Tejidos de Bolivia nace del profundo amor por nuestras tradiciones ancestrales y el
-                deseo de preservar el rico patrimonio textil boliviano. Desde nuestros inicios,
-                trabajamos directamente con artesanos y comunidades de diversas regiones de Bolivia,
-                asegurando prácticas de comercio justo y apoyando la economía local.
+                Bordados Flores nace del profundo amor por nuestras tradiciones ancestrales y el
+                deseo de preservar el rico patrimonio textil boliviano.
               </p>
               <p>
                 Cada prenda que ofrecemos cuenta una historia única, con símbolos y diseños que
@@ -91,8 +97,8 @@
               <h2>Nuestra Misión</h2>
               <p>
                 Preservar, valorar y difundir las técnicas textiles tradicionales de Bolivia,
-                ofreciendo productos auténticos de la más alta calidad mientras apoyamos
-                directamente a las comunidades artesanas que mantienen vivas estas tradiciones.
+                ofreciendo productos auténticos. Queremos que cada persona que adquiera nuestros
+                tejidos sienta la conexión con nuestras raíces.
               </p>
             </div>
 
@@ -100,24 +106,17 @@
               <h2>Nuestros Valores</h2>
               <div class="values-grid">
                 <div class="value-item">
-                  <h3>🏺 Tradición Ancestral</h3>
+                  <h3>Tradición Cultural</h3>
                   <p>
-                    Respetamos y preservamos las técnicas de tejido transmitidas por generaciones.
+                    Respetamos y preservamos la tradicion cultural transmitidas por generaciones.
                   </p>
                 </div>
                 <div class="value-item">
-                  <h3>🤝 Comercio Justo</h3>
-                  <p>
-                    Trabajamos directamente con artesanos, asegurando precios justos y condiciones
-                    dignas.
-                  </p>
+                  <h3>Comercio Justo</h3>
+                  <p>Trabajamos directamente con artesanos, asegurando precios justos.</p>
                 </div>
                 <div class="value-item">
-                  <h3>🌱 Sostenibilidad</h3>
-                  <p>Utilizamos materiales naturales y procesos que respetan el medio ambiente.</p>
-                </div>
-                <div class="value-item">
-                  <h3>✋ Calidad Artesanal</h3>
+                  <h3>Calidad Artesanal</h3>
                   <p>Cada pieza es única, elaborada a mano con la máxima dedicación y cuidado.</p>
                 </div>
               </div>
@@ -132,12 +131,9 @@
           <h2>¿Por Qué Elegirnos?</h2>
           <ul class="benefits-list">
             <li>Productos 100% auténticos elaborados por artesanos bolivianos</li>
-            <li>Apoyo directo a comunidades indígenas y rurales</li>
-            <li>
-              Materiales de la más alta calidad: lana de alpaca, algodón orgánico, tintes naturales
-            </li>
+            <li>Compromiso con el comercio justo y la sostenibilidad</li>
             <li>Cada compra contribuye a preservar tradiciones ancestrales</li>
-            <li>Atención personalizada y asesoramiento cultural</li>
+            <li>Atención personalizada y asesoramiento</li>
             <li>Envíos seguros a toda Bolivia</li>
           </ul>
         </div>
@@ -164,14 +160,6 @@
   color: var(--rojo-tradicional);
   margin-bottom: var(--espaciado-md);
 }
-
-.lead {
-  font-size: 1.25rem;
-  color: var(--gris-medio);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 /* Layout principal de dos columnas */
 .main-content {
   display: grid;
@@ -188,7 +176,7 @@
 
 .contact-section {
   background: linear-gradient(135deg, var(--crema), white);
-  padding: var(--espaciado-xl);
+  padding: var(--espaciado-md);
   border-radius: 12px;
   border-left: 4px solid var(--rojo-tradicional);
   height: fit-content;
@@ -220,7 +208,7 @@
   display: flex;
   align-items: center;
   gap: var(--espaciado-md);
-  padding: var(--espaciado-md);
+  padding: var(--espaciado-xs) var(--espaciado-sm);
   background: white;
   border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -235,7 +223,8 @@
 }
 
 .whatsapp:hover,
-.bxl-whatsapp:hover {
+bxl-whatsapp:hover,
+title-whatsapp:hover {
   border-color: #25d366;
   color: #25d366;
 }
@@ -266,7 +255,7 @@ bx-map:hover {
 }
 
 .link-icon {
-  font-size: 3rem;
+  font-size: 2rem;
   min-width: 40px;
   text-align: center;
 }

@@ -28,13 +28,13 @@
   font-weight: 600;
   font-family: var(--fuente-logo);
   font-style: normal;
-  font-size: 1.8rem;
+  font-size: 2rem;
   transition: var(--transicion-media);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .nav__logo:hover {
-  color: var(--crema);
+  color: var(--rojo-bajo);
   transform: scale(1.05);
 }
 .nav__logo-img {
@@ -116,7 +116,7 @@
 .active-link {
   position: relative;
   color: var(--rojo-tradicional);
-  /* background-color: rgba(245, 158, 11, 0.2); */
+  padding: 8px 8px 0 8px;
   transition: 0.3s;
 }
 
@@ -125,8 +125,8 @@
   position: absolute;
   bottom: -0.75rem;
   width: 6px;
-  height: 3px;
-  background: var(--crema);
+  height: 2px;
+  background: var(--rojo-tradicional);
   border-radius: 2px;
 }
 
@@ -165,13 +165,13 @@
   }
 
   .nav__link:hover {
-    color: var(--crema);
+    color: var(--rojo-bajo);
     background-color: rgba(255, 255, 255, 0.1);
   }
 
   .active-link::before {
     bottom: 0.1px;
-    width: 30px;
+    width: 40px;
   }
 
   .nav__img {
